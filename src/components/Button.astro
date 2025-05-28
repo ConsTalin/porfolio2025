@@ -1,0 +1,17 @@
+---
+// Button.astro
+const {id, class: customClass = '', ...rest } = Astro.props;
+
+
+---
+
+<button id={id}
+  class={`cursor-pointer bg-white/25 border border-green/30 rounded-full 
+    flex justify-center items-center gap-x-2
+    mt-4 py-1 px-2 md:py-2 md:px-2
+    text-xs md:text-sm transition
+    hover:scale-103 hover:bg-white/20 ${customClass}`}
+  {...rest}
+>
+  <slot />
+</button>

@@ -1,11 +1,148 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import Github from '../components/icons/GitHub.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Gmail from '../components/icons/Gmail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import SweetCase from '../components/icons/SweetCase.astro';
+import DesktopCode from '../components/icons/DesktopCode.astro';
+import ProjectsDes from '../components/ProjectsDes.astro';
+import ProjectsDev from '../components/ProjectsDev.astro';
+import Person from '../components/icons/Person.astro';
+import About from '../components/About.astro';
+import Form from '../components/Form.astro';
+import Button from '../components/Button.astro';
+import Code from '../components/icons/Code.astro';
+import Design from '../components/icons/Design.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+	title="Porfolio de Constanza Talin - Desarolladora, Programadora y Diseñadora Web"
+	description="Contrata a Constanza Talin para Desarrollador o Diseñador tu aplicación Web.">
+	<main class="px-1 py-1">
+		<SectionContainer class = "py-20 pb-25">
+		<img
+			class="h-30 g:h-10 w-auto md:h-70 md:w-auto mask-b-from-30% mask-b-to-100%"
+			src="/src/img/header-port1.png"
+			alt="photo cons"/>
+		<h1 class="text-white text-3xl md:text-5xl font-bold flexr flex-row gap-x-5 pb-4">
+			<a href="https://www.linkedin.com/in/constanza-talin-urmeneta/" target="_blank"
+				class="flex justify-center items-center pb-2 pl-60 lg:pl-68">
+				<Badge>Disponible para trabajar</Badge>
+			</a>
+			
+			Hey, Soy Constanza Talin
+		</h1>
+		<h2 class="md:text-2xl text-xl pb-3 text-red-400">Desarrolladora y diseñadora web.</h2>
+		<p class="  text-white/80 text-wrap max-w-[700px]">
+			Me gusta crear experiencias digitales únicas y funcionales.
+			Siempre estoy aprendiendo y buscando nuevos desafíos. 
+			Si tienes un proyecto en mente, no dudes en contactarme.
+		</p>
+
+		<nav class="flex gap-x-2 mt-3 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/constanza-talin-urmeneta/">
+					<LinkedIn class=" size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/ConsTalin/ConsTalin">
+					<Github class="size-4 md:size-6" />
+					Github
+				</SocialPill>
+				<SocialPill href="mailto:constanzatalin@gmail.com">
+					<Gmail class="size-4 md:size-6"/>
+					constanzatalin@gmail.com
+				</SocialPill>
+		</nav>
+		</SectionContainer>
+
+		<SectionContainer class = " pb-10" id="sobre-mi">
+			<h2 class="text-3xl font-semibols mb-3 flex gap-x-2 items-center">
+				<Person class="size-6" />
+				Sobre mí
+			</h2>
+			<About/>
+			
+		</SectionContainer>
+
+		<SectionContainer class = " pb-10" id="experiencia">
+			<h2 class="text-3xl font-semibols mb-3 flex gap-x-2 items-center">
+				<SweetCase class="size-6" />
+				Experiencia laboral
+			</h2>
+			<Experience/>
+		</SectionContainer>
+
+		<SectionContainer class = " pb-10" id="proyectos">
+			<h2 class="text-3xl font-semibols mb-3 flex gap-x-2 items-center">
+				<DesktopCode class="size-6" />
+				Proyectos
+			</h2>
+			<div class="flex flex-col md:flex-row gap-x-2">
+			<Button id="btnDev">
+			<Code/>Desarrollo Web
+			</Button>
+			<Button id="btnDes">
+			<Design/>Diseño Web
+			</Button>
+
+			</div>
+			<ProjectsDes id="projectsDes" />
+			<ProjectsDev id="projectsDev" />
+
+		</SectionContainer>
+				<SectionContainer class = " pb-10" id="contacto">
+			<h2 class="text-3xl font-semibols mb-3 flex gap-x-2 items-center">
+				<DesktopCode class="size-6" />
+				Contacto
+			</h2>
+			<Form/>
+
+		</SectionContainer>
+
+		
+
+	</main>
+		<script is:inline>
+		const btnDes = document.getElementById('btnDes');
+		const btnDev = document.getElementById('btnDev');
+		const projectsDes = document.getElementById('projectsDes');
+		const projectsDev = document.getElementById('projectsDev');
+
+		btnDes.addEventListener('click', () => {
+		
+			
+			projectsDev.classList.remove('block');
+			projectsDes.classList.remove('hidden');
+			projectsDev.classList.add('hidden');
+			projectsDes.classList.add('block');
+			
+		
+
+			btnDes.classList.add('bg-green-500', 'text-white');
+			btnDes.classList.remove('bg-transparent', 'text-black');
+			btnDev.classList.remove('bg-green-500', 'text-white');
+			btnDev.classList.add('bg-transparent', 'text-black');
+		});
+
+		btnDev.addEventListener('click', () => {
+			projectsDev.classList.remove('hidden');
+			projectsDes.classList.remove('block');
+			projectsDev.classList.add('block');
+			projectsDes.classList.add('hidden');
+			
+
+			btnDev.classList.add('bg-green-500', 'text-white');
+			btnDev.classList.remove('bg-transparent', 'text-black');
+			btnDes.classList.remove('bg-green-500', 'text-white');
+			btnDes.classList.add('bg-transparent', 'text-black');
+		});
+		</script>
+
 </Layout>

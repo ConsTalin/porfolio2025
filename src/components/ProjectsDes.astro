@@ -1,0 +1,90 @@
+---
+import Wordpress from '../components/icons/Wordpress.astro';
+import CSS from '../components/icons/CSS.astro';
+import HTML from '../components/icons/HTML.astro';
+import JavaScript from '../components/icons/JavaScript.astro';
+import Elementor from '../components/icons/Elementor.astro';
+const {id, class: className} = Astro.props;
+const TAGS={
+    WORDPRESS: {
+        name: 'Wordpress',
+        class: 'bg-white/20 text-white',
+        icon: Wordpress
+        
+    },
+
+    ELEMENTOR: {
+        name: 'Elementor',
+        class: 'bg-white/20 text-white',
+        icon: Elementor
+    },
+    WPBACKERY: {
+        color: 'bg-green-500',
+        textColor: 'text-green-500'
+    },
+
+    CSS: {
+        name: 'CSS',
+        class: 'bg-white/20 text-white',
+        icon: CSS
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-white/20 text-white',
+        icon: HTML
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        class: 'bg-white/20 text-white',
+        icon: JavaScript
+    }
+    
+}
+const PROJECTS =[
+    {
+        title: 'Feju Estudio',
+        description: 'Diseño de sitio web para un estudio de diseño de cocinas, baños, reformas integrales y más. El sitio web fue diseñado y desarrollado en Wordpress, utilizando WPBackery para la creación de las páginas y HTML, CSS y JavaScript para realizar algún cambio concreto.',
+        link: 'https://fejuestudio.com/',
+        github: '#',
+        image: './public/projects/fejuport.webp',
+        tags: [TAGS.WORDPRESS, TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT]
+    },
+
+    {
+        title: 'Ilcapo',
+        description: 'Diseño de sitio web para un estucio de diseño de cocinas, baños, reformas integrales y más. El sitio web fue diseñado y desarrollado en Wordpress, utilizando WPBackery para la creación de las páginas y HTML, CSS y JavaScript para realizar algún cambio concreto.',
+        link: 'https://fejuestudio.com/',
+        github: '#',
+        image: './public/projects/ilcapo.webp',
+        tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR,TAGS.CSS]
+    },
+    {
+        title: 'Erroibide',
+        description: 'Diseño de sitio web para un estucio de diseño de cocinas, baños, reformas integrales y más. El sitio web fue diseñado y desarrollado en Wordpress, utilizando WPBackery para la creación de las páginas y HTML, CSS y JavaScript para realizar algún cambio concreto.',
+        link: 'https://fejuestudio.com/',
+        github: '#',
+        image: './public/projects/erroibide.webp',
+        tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR]
+    }
+]
+---
+
+<section id={id} class={className}>
+  {PROJECTS.map(({title, description, tags, image}) =>(
+        <article class="mt-10 mb-5 ">
+            <h3 class="text-2xl font-semibold text-red-300 dark:text-red-900">{title}</h3>
+            <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">{description}</p>
+            <ul class="flex gap-x-4 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 items-center rounded-full text-sm ${tag.class}mt-4 py-1 px-2 md:py-2 md:px-2 mb-3`}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img src={image} alt={title} />
+        </article>
+      ))}
+</section>

@@ -1,0 +1,161 @@
+---
+import Wordpress from '../components/icons/Wordpress.astro';
+import CSS from '../components/icons/CSS.astro';
+import HTML from '../components/icons/HTML.astro';
+import JavaScript from '../components/icons/JavaScript.astro';
+import Elementor from '../components/icons/Elementor.astro';
+import LinkedIn from './icons/LinkedIn.astro';
+import PHP from './icons/PHP.astro';
+import MySQL from './icons/MySQL.astro';
+import GitHub from './icons/GitHub.astro';
+import Photoshop from './icons/Photoshop.astro';
+import TypeScript from './icons/TypeScript.astro';
+import React from './icons/React.astro';
+import CSharp from './icons/CSharp.astro';
+import Astro1 from './icons/Astro1.astro';
+import NodeJS from './icons/NodeJS.astro';
+import Illustrator from './icons/Illustrator.astro';
+import Indesign from './icons/Indesign.astro';
+
+const TAGS = {
+    WORDPRESS: {
+        name: 'Wordpress',
+        class: 'bg-white/20 text-white',
+        icon: Wordpress
+    },
+
+    ELEMENTOR: {
+        name: 'Elementor',
+        class: 'bg-white/20 text-white',
+        icon: Elementor
+    },
+    WPBACKERY: {
+        color: 'bg-green-500',
+        textColor: 'text-green-500'
+    },
+
+    CSS: {
+        name: 'CSS',
+        class: 'bg-white/20 text-white',
+        icon: CSS
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-white/20 text-white',
+        icon: HTML
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        class: 'bg-white/20 text-white',
+        icon: JavaScript
+    },
+    PHP: {
+        name: 'PHP',
+        class: 'bg-white/20 text-white',
+        icon: PHP
+    },
+    MYSQL: {
+        name: 'MYSQL',
+        class: 'bg-white/20 text-white',
+        icon: MySQL
+    },
+    GitHub: {
+        name: 'GitHub',
+        class: 'bg-white/20 text-white',
+        icon: GitHub
+    },
+    TypeScript: {
+        name: 'TypeScript',
+        class: 'bg-white/20 text-white',
+        icon: TypeScript
+    },
+    REACT: {
+        name: 'React',
+        class: 'bg-white/20 text-white',
+        icon: React
+    },
+    CSHARP: {
+        name: 'C#',
+        class: 'bg-white/20 text-white',
+        icon: CSharp
+    },
+    ASTRO: {
+        name: 'Astro',
+        class: 'bg-white/20 text-white',
+        icon: Astro1
+    },
+    NODEJS: {
+        name: 'NodeJs',
+        class: 'bg-white/20 text-white',
+        icon: NodeJS
+    }
+    ,
+    PHOTOSHOP: {
+        name: 'Photoshop',
+        class: 'bg-white/20 text-white',
+        icon: Photoshop
+    },
+    ILLUSTRATOR: {
+        name: 'Illustrator',
+        class: 'bg-white/20 text-white',
+        icon: Illustrator
+    },
+    INDESIGN: {
+        name: 'Indesign',
+        class: 'bg-white/20 text-white',
+        icon: Indesign
+    }
+
+}
+
+const ABOUT =[
+{
+    description1:' Una mente inquieta que se enamoró del desarrollo web. Mi historia empezó con HTML, CSS y JavaScript en el ciclo de DAW, y desde entonces no he parado de construir, romper y volver a construir cosas en la web.🚀He trabajado con PHP, MySQL, FTP y combinado con que combino con el uso de Git y GitHub para mantener mis proyectos organizados y versionados de forma profesional.',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP, TAGS.MYSQL, TAGS.GitHub ]
+
+},
+{
+    description2: 'Pero mi curiosidad me llevó más allá: ahora exploro el mundo de TypeScript, NodeJS, React, C#, .NET y Astro por mi cuenta. Me fascina combinar el diseño con la lógica para crear experiencias que se sientan vivas. Creo en el poder de una web bien pensada, en escribir código con cariño y en nunca dejar de aprender.',
+    tags: [TAGS.TypeScript, TAGS.REACT, TAGS.CSHARP, TAGS.ASTRO,TAGS.NODEJS]
+},
+ 
+{
+    description3:'He trabajado con CMS como WordPress (sí, también fui amiga de Elementor y WPBakery 💅). Además, vengo del mundo de las artes gráficas (GM en Preimpresión Digital), donde aprendí herramientas como Photoshop, Illustrator e InDesign. Esto me da una base sólida en diseño visual y composición. ',
+    tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR, TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR, TAGS.INDESIGN]
+
+}
+]
+
+---
+
+
+
+
+
+{
+    ABOUT.map(({ description1, description2, description3, tags}) =>(
+        <article class="text-white/80 mt-10 mb-5">
+            
+            
+            <div class="flex flex-col gap-y-2.5">
+                <p>{description1}</p>
+                <p>{description2}</p>
+                <p>{description3}</p>
+            </div>
+            <ul class="flex gap-x-4 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 items-center rounded-full text-sm ${tag.class}mt-4 py-1 px-2 md:py-2 md:px-2 mt-3`}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+        </article>
+    ))
+}
+
+
+
+            

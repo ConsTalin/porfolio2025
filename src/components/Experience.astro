@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+    {
+        title: "Prácticas en Desarrollo y Diseño Web",
+        date: "Junio 2024",
+        description: "Desarrollo e implementación de sitios web en WordPress utilizando Elementor y WPBakery, con personalización avanzada mediante HTML, CSS y JavaScript. Diseño responsive, accesible y optimizado para SEO. Gestión de dominios, hosting, bases de datos y archivos vía FTP.",
+        link: "#",
+        linkText: "Ver más",
+    }
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCE.map(experience =>(
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }                  
+    
+</ol>
+

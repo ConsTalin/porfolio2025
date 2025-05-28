@@ -1,0 +1,87 @@
+---
+let success= false;
+let error ="";
+---
+<form id="contact-form">
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+        <div>
+            <label for="nombre" class="block mb-2 text-sm font-medium text-white/80 dark:text-white">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-black/80 text-sm rounded-lg focus:ring-back/80 focus:border-back/80 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-back/80 dark:focus:border-back/80" placeholder="Tu nombre" required />
+          
+        </div> 
+        <div>
+            <label for="telefono" class="block mb-2 text-sm font-medium text-white/80 dark:text-white">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" class="bg-gray-50 border border-gray-300 text-black/80 text-sm rounded-lg focus:ring-back/80 focus:border-back/80 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-back/80 dark:focus:border-back/80" placeholder="683171305" pattern="[0-9]{9}" required />
+            
+        </div>
+    <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-white/80 dark:text-white">Email</label>
+        <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-black/80 text-sm rounded-lg focus:ring-back/80 focus:border-back/80 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-back/80 dark:focus:border-back/80" placeholder="nombre@gmail.com" required />
+       
+    </div> 
+        <div>
+        <label for="asunto" class="block mb-2 text-sm font-medium text-white/80 dark:text-white">Asunto</label>
+        <input type="text" id="asunto" name="asunto" class="bg-gray-50 border border-gray-300 text-black/80 text-sm rounded-lg focus:ring-back/80 focus:border-back/80 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-back/80 dark:focus:border-back/80" placeholder="Asunto" required />
+       
+    </div> 
+    <div class ="col-span-2">
+        <label for="mensaje" class=" mb-2 text-sm font-medium text-white/80 dark:text-white">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" class="block p-2.5 w-full text-sm text-black/80 bg-gray-50 rounded-lg border border-gray-300 focus:ring-back/80 focus:border-back/80 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-back/80 dark:focus:border-back/80" placeholder="Cuéntame cómo podemos colaborar..."></textarea>
+        
+    </div>
+
+    <div class="col-span-2 flex items-end">
+        <div class="flex items-right h-5">
+        <input id="remember" name="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+        </div>
+        <label for="remember" class="ms-2 text-sm font-medium text-white/80 dark:text-white/80">Acepto <a href="#" class="text-red-400 hover:underline dark:text-back/80">la política de privacidad</a>.</label>
+    </div>
+    
+    <button type="submit" class=" bg-white/25 border border-white/30 rounded-full flex justify-center items-center gap-x-2 mt-4 py-1 px-2 md:py-2 md:px-2 text-xs md:text-sm transition hover:scale-103 hover:bg-white/20">Enviar</button>
+    
+</form>
+
+<p id="result" style="margin-top: 1rem;"></p>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const data = {
+        nombre: formData.get("nombre"),
+        telefono: formData.get("telefono"),
+        email: formData.get("email"),
+        asunto: formData.get("asunto"),
+        mensaje: formData.get("mensaje"),
+      };
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+          alert("Mensaje enviado correctamente ✅");
+          form.reset();
+        } else {
+          alert("Error al enviar el mensaje ❌: " + result.error);
+        }
+      } catch (err) {
+        alert("Error en la conexión con el servidor ❌");
+        console.error(err);
+      }
+    });
+  }
+</script>
+

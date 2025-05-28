@@ -9,6 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.13"
+    "@astrojs/db": "^0.14.14",
+    "@astrojs/node": "^9.2.2",
+    "@astrojs/react": "^4.3.0",
+    "@fontsource-variable/onest": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.7.13",
+    "dotenv": "^16.5.0",
+    "nodemailer": "^7.0.3",
+    "notenv": "^2.0.3",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "autoprefixer": "^10.4.21"
   }
 }
