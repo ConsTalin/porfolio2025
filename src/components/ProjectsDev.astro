@@ -42,8 +42,7 @@ const PROJECTS =[
     {
         title: 'Calculadora de Aspect Ratio',
         description: 'Una aplicación web sencilla que permite subir una imagen y automáticamente calcula sus dimensiones y el aspecto ratio (proporción de ancho y alto). Está desarrollada con HTML, JavaScript y CSS, y ofrece una interfaz limpia y fácil de usar para que puedas conocer rápidamente las proporciones exactas de cualquier imagen.',
-        link: 'https://fejuestudio.com/',
-        github: '#',
+        github: 'https://github.com/ConsTalin/AspectRatio',
         image: './public/projects/aspectRatio.webp',
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
     },
@@ -51,16 +50,14 @@ const PROJECTS =[
     {
         title: 'Simulador de Seguimiento en Twitter',
         description: 'Desarrollé una aplicación interactiva usando React que emula la funcionalidad de seguimiento de Twitter. La app muestra una lista de usuarios con botones que permiten seguir o dejar de seguir a cada uno, actualizando el estado en tiempo real y ofreciendo una experiencia dinámica y fluida. Es un proyecto ideal para demostrar manejo de estados, eventos y renderizado condicional en React, con un diseño simple y moderno.',
-        link: 'https://fejuestudio.com/',
-        github: '#',
+        github: 'https://github.com/ConsTalin/00-hola-mundo.git',
         image: './public/projects/twitter.webp',
         tags: [TAGS.REACT, TAGS.NODE,TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
     },
     {
         title: 'Primera Web',
         description: 'Mi primer proyecto web, una página sencilla creada con HTML, CSS y JavaScript básico. Aunque el diseño es simple y aún estaba aprendiendo, fue una experiencia clave para entender los fundamentos del desarrollo web y sentar las bases para mis proyectos posteriores. Esta web refleja el inicio de mi camino en el mundo del desarrollo y la importancia de practicar y mejorar constantemente.',
-        link: 'https://fejuestudio.com/',
-        github: '#',
+        github: 'https://github.com/ConsTalin/P-ginaWeb',
         image: './public/projects/primeraWeb.webp',
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
     }
@@ -68,7 +65,7 @@ const PROJECTS =[
 ---
 
 <section id={id} class={className}>
-  {PROJECTS.map(({title, description, tags, image}) =>(
+  {PROJECTS.map(({title, description, tags, image, github}) =>(
         <article class="mt-10 mb-5 ">
             <h3 class="text-2xl font-semibold text-red-300 dark:text-red-900">{title}</h3>
             <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">{description}</p>
@@ -82,7 +79,7 @@ const PROJECTS =[
                     </li>
                 ))}
             </ul>
-            <img src={image} alt={title} />
+            <a  href= {github} target="_blank" rel="noopener noreferrer"><img src={image}  alt={title} /></a>
         </article>
       ))}
 </section>

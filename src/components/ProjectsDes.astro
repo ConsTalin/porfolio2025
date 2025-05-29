@@ -45,7 +45,6 @@ const PROJECTS =[
         title: 'Feju Estudio',
         description: 'Diseño de sitio web para un estudio de diseño de cocinas, baños, reformas integrales y más. El sitio web fue diseñado y desarrollado en Wordpress, utilizando WPBackery para la creación de las páginas y HTML, CSS y JavaScript para realizar algún cambio concreto.',
         link: 'https://fejuestudio.com/',
-        github: '#',
         image: './public/projects/fejuport.webp',
         tags: [TAGS.WORDPRESS, TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT]
     },
@@ -53,16 +52,14 @@ const PROJECTS =[
     {
         title: 'Ilcapo',
         description: 'Diseño de sitio web para un estucio de diseño de cocinas, baños, reformas integrales y más. El sitio web fue diseñado y desarrollado en Wordpress, utilizando WPBackery para la creación de las páginas y HTML, CSS y JavaScript para realizar algún cambio concreto.',
-        link: 'https://fejuestudio.com/',
-        github: '#',
+        link: 'https://cuidador1.es/ilcapo/ilcapo/',
         image: './public/projects/ilcapo.webp',
         tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR,TAGS.CSS]
     },
     {
         title: 'Erroibide',
         description: 'Diseño de sitio web para un estucio de diseño de cocinas, baños, reformas integrales y más. El sitio web fue diseñado y desarrollado en Wordpress, utilizando WPBackery para la creación de las páginas y HTML, CSS y JavaScript para realizar algún cambio concreto.',
-        link: 'https://fejuestudio.com/',
-        github: '#',
+        link: 'https://erroibide.org/',
         image: './public/projects/erroibide.webp',
         tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR]
     }
@@ -70,7 +67,7 @@ const PROJECTS =[
 ---
 
 <section id={id} class={className}>
-  {PROJECTS.map(({title, description, tags, image}) =>(
+  {PROJECTS.map(({title, description, tags, image, link}) =>(
         <article class="mt-10 mb-5 ">
             <h3 class="text-2xl font-semibold text-red-300 dark:text-red-900">{title}</h3>
             <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">{description}</p>
@@ -84,7 +81,7 @@ const PROJECTS =[
                     </li>
                 ))}
             </ul>
-            <img src={image} alt={title} />
+            <a href= {link} target="_blank" rel="noopener noreferrer"><img src={image} alt={title} /></a>
         </article>
       ))}
 </section>
