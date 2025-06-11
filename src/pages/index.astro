@@ -17,6 +17,7 @@ import Form from '../components/Form.astro';
 import Button from '../components/Button.astro';
 import Code from '../components/icons/Code.astro';
 import Design from '../components/icons/Design.astro';
+import Contact from '../components/icons/Contact.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -26,7 +27,7 @@ import Design from '../components/icons/Design.astro';
 	title="Porfolio de Constanza Talin - Desarolladora, Programadora y Diseñadora Web"
 	description="Contrata a Constanza Talin para Desarrollador o Diseñador tu aplicación Web.">
 	<main class="px-1 py-1">
-		<SectionContainer class = "py-20 pb-25">
+		<SectionContainer class = "py-20">
 		<img
 			class="h-28 g:h-10 w-auto md:h-70 md:w-auto mask-b-from-30% mask-b-to-100%"
 			src="/img/header-port1.png"
@@ -37,7 +38,7 @@ import Design from '../components/icons/Design.astro';
 				<Badge>Disponible para trabajar</Badge>
 			</a>
 			
-			Hey, Soy Constanza Talin
+			Hey, soy Constanza Talin
 		</h1>
 		<h2 class="md:text-2xl text-xl pb-3 text-red-400">Desarrolladora y diseñadora web.</h2>
 		<p class="  text-white/80 text-wrap max-w-[700px]">
@@ -46,7 +47,7 @@ import Design from '../components/icons/Design.astro';
 			Si tienes un proyecto en mente, no dudes en contactarme.
 		</p>
 
-		<nav class="flex gap-x-2 mt-3 flex-wrap">
+		<nav class="flex gap-x-2 mt-3 ">
 				<SocialPill href="https://www.linkedin.com/in/constanza-talin-urmeneta/">
 					<LinkedIn class=" size-4 md:size-6" />
 					LinkedIn
@@ -62,8 +63,8 @@ import Design from '../components/icons/Design.astro';
 		</nav>
 		</SectionContainer>
 
-		<SectionContainer class = " pb-10" id="sobre-mi">
-			<h2 class="text-3xl font-semibold mb-3 flex gap-x-2 items-center">
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold mb-3 flex items-center">
 				<Person class="size-6" />
 				Sobre mí
 			</h2>
@@ -71,7 +72,7 @@ import Design from '../components/icons/Design.astro';
 			
 		</SectionContainer>
 
-		<SectionContainer class = " pb-10" id="experiencia">
+		<SectionContainer id="experiencia">
 			<h2 class="text-3xl font-semibold mb-3 flex gap-x-2 items-center">
 				<SweetCase class="size-6" />
 				Experiencia laboral
@@ -79,7 +80,7 @@ import Design from '../components/icons/Design.astro';
 			<Experience/>
 		</SectionContainer>
 
-		<SectionContainer class = " pb-10" id="proyectos">
+		<SectionContainer id="proyectos">
 			<h2 class="text-3xl font-semibold mb-3 flex gap-x-2 items-center">
 				<DesktopCode class="size-6" />
 				Proyectos
@@ -97,9 +98,9 @@ import Design from '../components/icons/Design.astro';
 			<ProjectsDev id="projectsDev" />
 
 		</SectionContainer>
-				<SectionContainer class = " pb-10" id="contacto">
+				<SectionContainer id="contacto">
 			<h2 class="text-3xl font-semibold mb-3 flex gap-x-2 items-center">
-				<DesktopCode class="size-6" />
+				<Contact class="size-6" />
 				Contacto
 			</h2>
 			<Form/>

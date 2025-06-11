@@ -1,0 +1,32 @@
+---
+import PolPriv from "../components/icons/PolPriv.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Política de Privacidad" description="Política de privacidad de Constanza Talín, desarrolladora web y diseñadora UX/UI. Aquí encontrarás cómo manejo tus datos personales.">
+    <SectionContainer class="mt-25">
+    <h1 class="text-3xl font-semibold mb-3 flex items-center">
+        <PolPriv class="size-6 me-2" />
+        Política de Privacidad
+    </h1>
+    <h2 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">Datos que recopilo:</h2>
+    <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">Recopilo la información que me proporcionas voluntariamente en el formulario de contacto:</p>
+    <ul class=" mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">
+        <li>Nombre</li>
+        <li>Teléfono</li>
+        <li>Correo electrónico</li>
+        <li>Asunto</li>
+        <li>Mensaje</li>
+    </ul>
+    <h2 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">¿Para qué uso tus datos?</h2>
+    <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">Para poder responder a tus consultas y ponerme en contacto contigo de manera adecuada.</p>
+    <h2 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">Conservación de datos:</h2>
+    <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">Tus datos se conservarán únicamente mientras sea necesario para responder a tu consulta o solicitud.</p>
+    <h2 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">No comparto tus datos:</h2>
+    <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">No vendo, cedo ni comparto tus datos personales con terceros.</p>
+    <h2 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">Derechos:</h2>
+    <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">Tienes derecho a acceder, rectificar o eliminar tus datos en cualquier momento. Para ello, puedes enviar un correo a: 
+        <a class = "text-red-400 hover:underline dark:text-back/80" href="mailto:constanzatalin@gmail.com">constanzatalin@gmail.com.</a> </p>
+    </SectionContainer>
+</Layout>
