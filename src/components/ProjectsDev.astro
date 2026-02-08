@@ -1,85 +1,123 @@
 ---
-import React from '../components/icons/React.astro';
-import CSS from '../components/icons/CSS.astro';
-import HTML from '../components/icons/HTML.astro';
-import JavaScript from '../components/icons/JavaScript.astro';
-import Node from '../components/icons/NodeJS.astro';
-const {id, class: className} = Astro.props;
-const TAGS={
+import React from "../components/icons/React.astro";
+import CSS from "../components/icons/CSS.astro";
+import HTML from "../components/icons/HTML.astro";
+import JavaScript from "../components/icons/JavaScript.astro";
+import Node from "../components/icons/NodeJS.astro";
+import TypeScript from "../components/icons/TypeScript.astro";
 
-    CSS: {
-        name: 'CSS',
-        class: 'bg-white/20 text-white',
-        icon: CSS
-    },
-    HTML: {
-        name: 'HTML',
-        class: 'bg-white/20 text-white',
-        icon: HTML
-    },
-    JAVASCRIPT: {
-        name: 'JavaScript',
-        class: 'bg-white/20 text-white',
-        icon: JavaScript
-    },
-    REACT: {
-    name: 'React',
-    class: 'bg-white/20 text-white',
-    icon: React
-        
-    },
+const { id, class: className } = Astro.props;
+const TAGS = {
+  CSS: {
+    name: "CSS",
+    class: "bg-white/20 text-white",
+    icon: CSS,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-white/20 text-white",
+    icon: HTML,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-white/20 text-white",
+    icon: JavaScript,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-white/20 text-white",
+    icon: React,
+  },
 
-    NODE: {
-        name: 'Node',
-        class: 'bg-white/20 text-white',
-        icon: Node
-    },
+  NODE: {
+    name: "Node",
+    class: "bg-white/20 text-white",
+    icon: Node,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-white/20 text-white",
+    icon: TypeScript,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Appointment Manager App (In Progress)",
+    description:
+      "Estoy desarrollando una aplicación de citas web enfocada en la interacción entre usuarios y la experiencia de usuario. El proyecto incluye funcionalidades como registro, perfiles, sistema de matching y diseño responsive, utilizando tecnologías modernas de frontend y backend. Es un proyecto personal orientado a aplicar conceptos de arquitectura web, manejo de estados y desarrollo full stack.",
+    github: "https://github.com/ConsTalin/appointment-app/tree/dev",
+    image: "/projects/appointmentApp.png",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.NODE,
+      TAGS.REACT,
+      TAGS.TYPESCRIPT,
+    ],
+  },
+  {
+    title: "Web Acoad",
+    description:
+      "Desarrollé una página web estática de manera voluntaria para ACOAD utilizando HTML, CSS, JavaScript, Astro y Tailwind CSS. El proyecto se centró en la maquetación responsive, la estructura del contenido y la optimización del rendimiento, creando una web ligera, moderna y accesible. Es un proyecto enfocado en demostrar buenas prácticas de diseño web, organización del código y uso de frameworks modernos de frontend.",
+    github: "https://acoad.org/",
+    image: "/projects/acoad.png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.NODE],
+  },
+  {
+    title: "Calculadora de Aspect Ratio",
+    description:
+      "Una aplicación web sencilla que permite subir una imagen y automáticamente calcula sus dimensiones y el aspecto ratio (proporción de ancho y alto). Está desarrollada con HTML, JavaScript y CSS, y ofrece una interfaz limpia y fácil de usar para que puedas conocer rápidamente las proporciones exactas de cualquier imagen.",
+    github: "https://github.com/ConsTalin/AspectRatio",
+    image: "/projects/aspectRatio.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
 
-
-    
-}
-const PROJECTS =[
-    {
-        title: 'Calculadora de Aspect Ratio',
-        description: 'Una aplicación web sencilla que permite subir una imagen y automáticamente calcula sus dimensiones y el aspecto ratio (proporción de ancho y alto). Está desarrollada con HTML, JavaScript y CSS, y ofrece una interfaz limpia y fácil de usar para que puedas conocer rápidamente las proporciones exactas de cualquier imagen.',
-        github: 'https://github.com/ConsTalin/AspectRatio',
-        image: '/projects/aspectRatio.webp',
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
-    },
-
-    {
-        title: 'Simulador de Seguimiento en Twitter',
-        description: 'Desarrollé una aplicación interactiva usando React que emula la funcionalidad de seguimiento de Twitter. La app muestra una lista de usuarios con botones que permiten seguir o dejar de seguir a cada uno, actualizando el estado en tiempo real y ofreciendo una experiencia dinámica y fluida. Es un proyecto ideal para demostrar manejo de estados, eventos y renderizado condicional en React, con un diseño simple y moderno.',
-        github: 'https://github.com/ConsTalin/00-hola-mundo.git',
-        image: '/projects/twitter.webp',
-        tags: [TAGS.REACT, TAGS.NODE,TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
-    },
-    {
-        title: 'Primera Web',
-        description: 'Mi primer proyecto web, una página sencilla creada con HTML, CSS y JavaScript básico. Aunque el diseño es simple y aún estaba aprendiendo, fue una experiencia clave para entender los fundamentos del desarrollo web y sentar las bases para mis proyectos posteriores. Esta web refleja el inicio de mi camino en el mundo del desarrollo y la importancia de practicar y mejorar constantemente.',
-        github: 'https://github.com/ConsTalin/P-ginaWeb',
-        image: '/projects/primeraWeb.webp',
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
-    }
-]
+  {
+    title: "Simulador de Seguimiento en Twitter",
+    description:
+      "Desarrollé una aplicación interactiva usando React que emula la funcionalidad de seguimiento de Twitter. La app muestra una lista de usuarios con botones que permiten seguir o dejar de seguir a cada uno, actualizando el estado en tiempo real y ofreciendo una experiencia dinámica y fluida. Es un proyecto ideal para demostrar manejo de estados, eventos y renderizado condicional en React, con un diseño simple y moderno.",
+    github: "https://github.com/ConsTalin/00-hola-mundo.git",
+    image: "/projects/twitter.webp",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Primera Web",
+    description:
+      "Mi primer proyecto web, una página sencilla creada con HTML, CSS y JavaScript básico. Aunque el diseño es simple y aún estaba aprendiendo, fue una experiencia clave para entender los fundamentos del desarrollo web y sentar las bases para mis proyectos posteriores. Esta web refleja el inicio de mi camino en el mundo del desarrollo y la importancia de practicar y mejorar constantemente.",
+    github: "https://github.com/ConsTalin/P-ginaWeb",
+    image: "/projects/primeraWeb.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+];
 ---
 
 <section id={id} class={className}>
-  {PROJECTS.map(({title, description, tags, image, github}) =>(
-        <article class="mt-10 mb-5 ">
-            <h3 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">{title}</h3>
-            <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">{description}</p>
-            <ul class="flex gap-x-4 flex-row flex-wrap">
-                {tags.map((tag) => (
-                    <li>
-                        <span class={`flex gap-x-2 items-center rounded-full text-sm ${tag.class}mt-4 py-1 px-2 md:py-2 md:px-2 mb-3`}>
-                        <tag.icon class="size-4" />
-                        {tag.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <a  href= {github} target="_blank" rel="noopener noreferrer"><img src={image}  alt={title} /></a>
-        </article>
-      ))}
+  {
+    PROJECTS.map(({ title, description, tags, image, github }) => (
+      <article class="mt-10 mb-5 ">
+        <h3 class=" text-xl md:text-2xl font-semibold text-red-300 dark:text-red-900">
+          {title}
+        </h3>
+        <p class="mb-4 text-base font-normal text-white/80 dark:text-gray-400 text-pretty">
+          {description}
+        </p>
+        <ul class="flex gap-x-4 flex-row flex-wrap">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 items-center rounded-full text-sm ${tag.class}mt-4 py-1 px-2 md:py-2 md:px-2 mb-3`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <a href={github} target="_blank" rel="noopener noreferrer">
+          <img src={image} alt={title} />
+        </a>
+      </article>
+    ))
+  }
 </section>

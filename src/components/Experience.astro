@@ -1,23 +1,31 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCE = [
-    {
-        title: "Prácticas en Desarrollo y Diseño Web",
-        date: "Junio 2024",
-        description: "Desarrollo e implementación de sitios web en WordPress utilizando Elementor y WPBakery, con personalización avanzada mediante HTML, CSS y JavaScript. Diseño responsive, accesible y optimizado para SEO. Gestión de dominios, hosting, bases de datos y archivos vía FTP.",
-        link: "#",
-        linkText: "Ver más",
-    }
-]
+  {
+    title: "Frontend Developer en SEBN",
+    date: "Junio 2025 - Actualmente",
+    description:
+      "Desarrollo y mantenimiento de interfaces web utilizando Astro, JavaScript, HTML5 y CSS. Maquetación responsive con Bootstrap y Tailwind CSS, asegurando compatibilidad multidispositivo. Implementación de funcionalidades frontend y conexión con lógica backend en C#. Gestión y consulta de bases de datos mediante SQL. Uso de Node.js en el entorno de desarrollo. Control de versiones y trabajo colaborativo con Git. Trabajo bajo metodología Scrum, participando en dailys, planificación y revisiones. Uso de Power BI para visualización y análisis de datos. Mejora continua del código, usabilidad y rendimiento de las aplicaciones.",
+    link: "#",
+    linkText: "Ver más",
+  },
+  {
+    title: "Prácticas en Desarrollo y Diseño Web",
+    date: "Junio 2024",
+    description:
+      "Desarrollo e implementación de sitios web en WordPress utilizando Elementor y WPBakery, con personalización avanzada mediante HTML, CSS y JavaScript. Diseño responsive, accesible y optimizado para SEO. Gestión de dominios, hosting, bases de datos y archivos vía FTP.",
+    link: "#",
+    linkText: "Ver más",
+  },
+];
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
-    {
-        EXPERIENCE.map(experience =>(
-            <li class="mb-10 ms-4">
-                <ExperienceItem {...experience} />
-            </li>
-        ))
-    }                  
-    
-</ol>
 
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
